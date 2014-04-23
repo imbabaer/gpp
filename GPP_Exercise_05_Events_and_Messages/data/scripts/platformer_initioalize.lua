@@ -40,14 +40,14 @@ character = {}
 character.go = GameObjectManager:createGameObject("character")
 character.pc = character.go:createPhysicsComponent()
 local cinfo = RigidBodyCInfo()
-cinfo.shape = PhysicsFactory:createSphere(25)
+cinfo.shape = PhysicsFactory:createBox(15,15,15)
 cinfo.motionType = MotionType.Dynamic
 cinfo.restitution = 0
-cinfo.position = Vec3(0,0,100)
+cinfo.position = Vec3(0,0,10)
 cinfo.friction = 0
 cinfo.gravityFactor = 10
-cinfo.mass = 90
-cinfo.maxLinearVelocity = 50
+cinfo.mass = 250
+cinfo.maxLinearVelocity = 50000
 cinfo.linearDamping = 1
 
 character.rb = character.pc:createRigidBody(cinfo)
@@ -57,7 +57,32 @@ character.pc:getContactPointEvent():registerListener(collisionCharacter)
 character.sc = character.go:createScriptComponent()
 character.sc:setUpdateFunction(updateCharacter)
 
-
+for variable = 0, 4000 do
+	
+	box = {}
+	box.go = GameObjectManager:createGameObject(nextGUID())
+	box.pc = box.go:createPhysicsComponent()
+	local cinfo = RigidBodyCInfo()
+	--cinfo.shape = PhysicsFactory:createSphere(math.random(1,7))
+	cinfo.shape = PhysicsFactory:createBox(Vec3(math.random(1,6), math.random(1,6), math.random(1,6)))
+	cinfo.motionType = MotionType.Dynamic
+	cinfo.restitution = 1
+	cinfo.position = Vec3(math.random(-500,500),math.random(-500,500),math.random(10,20))
+	quat= Quaternion()
+	quat.x=math.random(0.1,1.0)
+	quat.y=math.random(0.1,1.0)
+	quat.z=math.random(0.1,1.0)
+	quat.angle=math.sin(math.random(0,3.1412))
+	quat = quat:normalized()
+	cinfo.rotation = quat
+	cinfo.friction = 1
+	cinfo.gravityFactor = 0.1
+	cinfo.mass = math.random(1,10)
+	cinfo.maxLinearVelocity = 50
+	cinfo.linearDamping = 1
+	box.rb = box.pc:createRigidBody(cinfo)
+	
+end
 
 
 

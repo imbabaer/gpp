@@ -48,27 +48,17 @@ sound system initialized
 ==================================================
 Initializing in game thread.
 initializing physics system
-setting up visual debugger
-hkVisualDebugger.cpp(37): VDB Server instance has been created
-System\Io\Platform\Bsd\hkBsdSocket.cpp(418): Listening on host[Laptop-R-8] port 25001
-hkVisualDebugger.cpp(111): Server created and will poll for new client(s) on port 25001 every frame
 physics system initialized
 initializing scripting system
 scripting system initialized
 initializing camera system
 camera system initialized
-Warning: [645645428] World\BroadPhaseBorder\hkpBroadPhaseBorder.cpp(178): Entity left the broadphase and has been changed to fixed motion type. See hkpWorldCinfo::BroadPhaseBorderBehaviour for details.
-Warning: [645645428] World\BroadPhaseBorder\hkpBroadPhaseBorder.cpp(178): Entity left the broadphase and has been changed to fixed motion type. See hkpWorldCinfo::BroadPhaseBorderBehaviour for details.
-Warning: [645645428] World\BroadPhaseBorder\hkpBroadPhaseBorder.cpp(178): Entity left the broadphase and has been changed to fixed motion type. See hkpWorldCinfo::BroadPhaseBorderBehaviour for details.
-Warning: [645645428] World\BroadPhaseBorder\hkpBroadPhaseBorder.cpp(178): Entity left the broadphase and has been changed to fixed motion type. See hkpWorldCinfo::BroadPhaseBorderBehaviour for details.
-Warning: [645645428] World\BroadPhaseBorder\hkpBroadPhaseBorder.cpp(178): Entity left the broadphase and has been changed to fixed motion type. See hkpWorldCinfo::BroadPhaseBorderBehaviour for details.
 Destroying in game thread.
 destroying camera system
 camera system destroyed
 destroying scripting system
 scripting system destroyed
 destroying physics system
-hkVisualDebugger.cpp(93): Server deleted.
 physics system destroyed
 destroying resource manager
 resource manager destroyed

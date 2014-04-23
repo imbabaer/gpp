@@ -1,11 +1,21 @@
 function update(elapsedTime)
 	DebugRenderer:printText(Vec2(-0.9,0.7), "elapsed time" .. elapsedTime)
 end
-
+acceleration = 1000
+boost = false
 function updateCharacter(guid,elapsedTime)
 	DebugRenderer:printText(Vec2(-0.9,0.8), "charupdate")
-	local acceleration = 300
+	 
 	local impulse = Vec3(0,0,0)
+	if(InputHandler:isPressed(Key.Shift)) then
+		if boost then
+			acceleration = acceleration/5
+			boost = false
+		else
+			acceleration = acceleration*5
+			boost = true
+		end
+	end
 	if(InputHandler:isPressed(Key.Right)) then
 		impulse.x=acceleration
 	end
@@ -18,8 +28,9 @@ function updateCharacter(guid,elapsedTime)
 	if(InputHandler:isPressed(Key.Down)) then
 		impulse.y=-acceleration
 	end
+	
 	if(InputHandler:isPressed(Key.Space) and character.grounded) then
-		character.rb:applyForce(0.5, Vec3(0,0,80000))
+		character.rb:applyForce(1, Vec3(0,0,200))
 		character.grounded = false
 	end
 	
