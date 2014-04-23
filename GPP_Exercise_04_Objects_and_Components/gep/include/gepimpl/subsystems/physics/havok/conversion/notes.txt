@@ -1,0 +1,4 @@
+Conversion function always have this signature:
+void toHk<Type>(const <inputType&>, <outputType&>)
+
+The conversion functions also take care of converting from/to left/right handed systems as well as time units where appropriate.
