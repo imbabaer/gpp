@@ -32,12 +32,14 @@ ground.rb = ground.pc:createRigidBody(cinfo)
 camera = {}
 camera.go = GameObjectManager:createGameObject(nextGUID())
 camera.cc = camera.go:createCameraComponent()
-camera.cc:setPosition(Vec3(0,-300,200))
+camera.cc:setPosition(Vec3(0,-1100,200))
 camera.cc:lookAt(Vec3(0,0,0))
 camera.cc:setActive()
 
 character = {}
 character.go = GameObjectManager:createGameObject("character")
+--local renderComponent2 = character.go:createRenderComponent()
+--renderComponent2:setPath("data/models/character/untitled.thModel")
 character.pc = character.go:createPhysicsComponent()
 local cinfo = RigidBodyCInfo()
 cinfo.shape = PhysicsFactory:createBox(15,15,15)
@@ -57,14 +59,17 @@ character.pc:getContactPointEvent():registerListener(collisionCharacter)
 character.sc = character.go:createScriptComponent()
 character.sc:setUpdateFunction(updateCharacter)
 
-for variable = 0, 4000 do
+for variable = 0, 100 do
 	
 	box = {}
 	box.go = GameObjectManager:createGameObject(nextGUID())
+	local renderComponent = box.go:createRenderComponent()
+	renderComponent:setPath("data/models/character/untitled.thModel")
 	box.pc = box.go:createPhysicsComponent()
 	local cinfo = RigidBodyCInfo()
 	--cinfo.shape = PhysicsFactory:createSphere(math.random(1,7))
-	cinfo.shape = PhysicsFactory:createBox(Vec3(math.random(1,6), math.random(1,6), math.random(1,6)))
+	--cinfo.shape = PhysicsFactory:createBox(Vec3(math.random(1,6), math.random(1,6), math.random(1,6)))
+	cinfo.shape = PhysicsFactory:createBox(Vec3(5,25,7))
 	cinfo.motionType = MotionType.Dynamic
 	cinfo.restitution = 1
 	cinfo.position = Vec3(math.random(-500,500),math.random(-500,500),math.random(10,20))
