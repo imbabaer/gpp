@@ -1,0 +1,144 @@
+log system initialized
+
+==================================================
+initializing settings
+settings initialized
+
+==================================================
+initializing scripting manager
+scripting manager initialized
+
+==================================================
+loading settings
+settings loaded
+
+==================================================
+initializing memory manager
+memory manager initialized
+
+==================================================
+initializing timer
+timer initialized
+
+==================================================
+initializing update framework
+update framework initialized
+
+==================================================
+initializing havok system
+
+==================================================
+initializing task queue
+task queue initialized
+
+==================================================
+initializing resource manager
+resource manager initialized
+
+==================================================
+initializing renderer extractor
+renderer extractor initialized
+
+==================================================
+initializing renderer
+Initialized DirectX with feature level DX 10.0
+Using DirectX Version: 11.0 sdk 7
+renderer initialized
+
+==================================================
+initializing input handler
+input handler initialized
+
+==================================================
+initializing sound system
+sound system initialized
+
+==================================================
+
+==================================================
+=== Global Manager Initialized ===================
+==================================================
+Initializing in game thread.
+initializing physics system
+setting up visual debugger
+hkVisualDebugger.cpp(37): VDB Server instance has been created
+System\Io\Platform\Bsd\hkBsdSocket.cpp(418): Listening on host[Laptop-R-8] port 25001
+hkVisualDebugger.cpp(111): Server created and will poll for new client(s) on port 25001 every frame
+physics system initialized
+initializing camera system
+camera system initialized
+Warning: Setting the leave condition of a state machine has no effect!
+State machine legend:
+  >> Entering state or state machine
+  << Leaving state or state machine
+>> game
+>> loading
+<< loading
+>> mainMenu
+<< mainMenu
+>> gameRunning
+>> A
+<< A
+>> fsm_C
+>> CB
+<< CB
+<< fsm_C
+<< gameRunning
+<< game
+Destroying in game thread.
+destroying camera system
+camera system destroyed
+destroying physics system
+hkVisualDebugger.cpp(93): Server deleted.
+physics system destroyed
+destroying resource manager
+resource manager destroyed
+
+==================================================
+
+==================================================
+destroying update framework
+update framework destroyed
+
+==================================================
+destroying input handler
+input handler destroyed
+
+==================================================
+destroying timer
+timer destroyed
+
+==================================================
+destroying resource manager
+resource manager destroyed
+
+==================================================
+destroying sound system
+sound system destroyed
+
+==================================================
+destroying renderer
+renderer destroyed
+
+==================================================
+destroying renderer extractor
+renderer extractor destroyed
+
+==================================================
+destroying memory manager
+memory manager destroyed
+
+==================================================
+destroying task queue
+task queue destroyed
+
+==================================================
+destroying scripting system
+scripting system destroyed
+
+==================================================
+destroying settings
+settings destroyed
+
+==================================================
+destroying log system

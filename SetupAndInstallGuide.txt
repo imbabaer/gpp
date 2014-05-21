@@ -1,0 +1,89 @@
+// ====================================================================================================
+// Gameplay Programming - Installation Guide
+// ====================================================================================================
+
+// NOTES
+///////////
+
+1.	Throughout this guide, you will have to check, edit, or add new windows environment variables. You can either use the standard windows way and manage the environment variables in the system settings, or you can use the "Rapid Environment Editor" [7], which makes this a whole lot easier and more intuitive. There is a way to install a portable version, so you won't need administrator privileges.
+
+2.	For those of you following this guide using one of the MI PCs, you will have to add your environment variables to your user variables instead of the system variables.
+	- Access the user variables via the control panel by opening the path "Control Panel\User Accounts and Family Safety\User Accounts" and clicking on "Change my environment variables". On german Windows, the path is "Systemsteuerung\Benutzerkonten\Benutzerkonten" where you have to click on "Eigene Umgebungsvariablen ändern".
+
+// INSTALLATION GUIDE
+////////////////////////
+
+1.	Download "Microsoft Visual Studio Professional 2012 32-bit (English)" from Dreamspark [1]
+
+	- Once you "purchased" the software (don't worry, it's free for you), you can find the serial number on your online-receipt on the Dreamspark [1] site.
+
+2.	Mount the iso file of "Microsoft Visual Studio Professional 2012 32-bit (English)" as a DVD drive or burn it to a DVD and insert that one. Then run the .exe in the root directory (either called "setup.exe", "vs_professional.exe", or "vs_ultimate.exe").
+
+	- In case you are installing this on Windows 8, you can simply double-click the .iso file and Windows will automatically mount it.
+
+	- In case you are NOT installing this on Windows 8, you can install WinCDEmu [2] and use that to mount the .iso file.
+
+3.	Install Visual Studio.
+
+	- From the optional features you only need "Microsoft Foundation Classes for C++".
+	- The installation might take a while...
+
+4.	Run Visual Studio once and close it again.
+
+	- Only then will the installation be complete!
+	- If it prompts you for default environment settings, we suggest you choose the C++ environment.
+
+5.	Download the DirectX SDK [3] and install it.
+
+	- Sometimes the installer will show an error message at the end of the installation process. This can usually be ignored.
+
+6. Confirm the DirectX installation.
+
+	- Check the environment variable "DXSDK_DIR", it has to point to the installation directory, e.g. "C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\".
+	- The following header files (.h) have to exist in "$(DXSDK_DIR)\Include\": D3D11.h, D3DX11.h
+	- The following lib files (.lib) have to exist in "$(DXSDK_DIR)\Lib\x64\": d3d11.lib, d3dx11.lib
+
+7.	Download and install FMOD Studio [4].
+
+8.	Download and install FMOD Studio Programmer's API [5].
+
+9.	Create an environment variable "FMOD_API" that points to the installation directory of the FMOD Studio Programmer API.
+
+	- By default, this would be "C:\Program Files (x86)\FMOD SoundSystem\FMOD Studio API Windows"
+
+10. To test the FMOD installation, run FMOD Studio and open the project "exampled.fspro".
+
+	- The playback of the sounds located in the "Events" tab should all work without problems. For example, select the sound "Explosions\Single Explosion" and click "Play" in the "Editor" tab.
+
+11.	Download and install the latest Havok SDK [6].
+
+	- NOTE: If you are running on one of the MI PCs, the havok SDK will already be installed there, so you can skip the following steps.
+	- Fill in your own Contact Information and the following for the Survey Information, before clicking on the "Submit" button:
+		- Occupation: 					Student or Academic
+		- Best Describing Intended Use: Educational Instruction/Course Study
+		- Do you plan to: 				Other
+	- On the following page, accept the Havok License Agreement
+	- Now download the "SDKs for Programmers" according to your windows version
+		- For Windows 7: "SDKs for Programmers (2013.1.0, VS 2012 with SIMD, for Windows 7)"
+		- For Windows 8: "SDKs for Programmers (2013.1.0, VS 2012 with SIMD, for Windows 8)"
+	- Once downloaded, extract the archive somewhere where you can find it again.
+	- It is not recommended to put it in "C:\Program Files" or "C:\Program Files (x86)" since it requires admin rights to write in these directories and it is possible that you will write files there later on, e.g. when compiling the havok demos.
+
+12.	Create an environment variable "HAVOK_API" that points to the directory where you put havok.
+
+	- On the MI PCs, this would be "C:\hk2013_1_0_r1"
+
+13.	All done! If your Visual Studio was open during the whole setup process, you should restart it now so it will load the correct environment variables.
+
+// ====================================================================================================
+
+[1]: https://e5.onthehub.com/WebStore/Security/Signin.aspx?ws=ec0c2eea-699b-e011-969d-0030487d8897
+[2]: http://wincdemu.sysprogs.org/
+[3]: http://www.microsoft.com/en-us/download/details.aspx?id=6812
+[4]: http://www.fmod.org/download/fmodstudio/tool/Win/fmodstudio10210win-installer.exe
+[5]: http://www.fmod.org/download/fmodstudio/api/Win/fmodstudioapi10210win-installer.exe
+[6]: http://www.havok.com/try-havok
+[7]: http://www.rapidee.com/en/about
+
+// ====================================================================================================
+
